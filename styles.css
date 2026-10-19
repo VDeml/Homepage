@@ -52,3 +52,126 @@ h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
+
+/**********************/
+:root {
+  --shadow-color: 0deg 0% 0%;
+  --shadow-elevation-low:
+    0.2px 0.3px 0.4px hsl(var(--shadow-color) / 0.1),
+    0.4px 0.5px 0.7px -1.2px hsl(var(--shadow-color) / 0.1),
+    1px 1.2px 1.8px -2.5px hsl(var(--shadow-color) / 0.1);
+  --shadow-elevation-medium:
+    0.2px 0.3px 0.4px hsl(var(--shadow-color) / 0.11),
+    0.8px 1px 1.4px -0.8px hsl(var(--shadow-color) / 0.11),
+    2px 2.4px 3.5px -1.7px hsl(var(--shadow-color) / 0.11),
+    4.8px 5.9px 8.6px -2.5px hsl(var(--shadow-color) / 0.11);
+  --shadow-elevation-high:
+    0.2px 0.3px 0.4px hsl(var(--shadow-color) / 0.11),
+    1.6px 2px 2.9px -0.4px hsl(var(--shadow-color) / 0.11),
+    3.1px 3.8px 5.5px -0.8px hsl(var(--shadow-color) / 0.11),
+    5.4px 6.7px 9.7px -1.2px hsl(var(--shadow-color) / 0.11),
+    9.2px 11.5px 16.6px -1.7px hsl(var(--shadow-color) / 0.11),
+    15.1px 18.8px 27.1px -2.1px hsl(var(--shadow-color) / 0.11),
+    23.8px 29.7px 42.8px -2.5px hsl(var(--shadow-color) / 0.11);
+}
+@font-face {
+    font-family:Playfair Display;
+    src: url(assets/fonts/PlayfairDisplay/PlayfairDisplay-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Roboto;
+    src: url(assets/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
+}
+body {
+    height: 100vh;
+    background-color: rgb(221, 253, 255);
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: PlayfairDisplay, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-size: 68px;
+}
+h2 {
+    font-size: 52px;
+}
+
+header {
+    border: 5px solid brown;
+    /*
+    background-color: cyan;
+    clip-path: polygon(0 0, 100% 0, 100% 54%, 0 100%);
+    z-index: -1;
+    */
+    padding: 4rem 2rem;
+    position: relative;
+    align-self: center;
+}
+main {
+    border: 5px solid darkgreen;
+    flex: 1;
+}
+footer {
+    border: 5px solid blue;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+    margin: 2rem;
+}
+
+.heroImage {
+    justify-self: end;
+    box-shadow: var(--shadow-elevation-high);
+}
+
+.headerName {
+    color: white;
+    position: absolute;
+    bottom: 100px;
+    padding-left: 25px;
+}
+
+.heroText {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: var(--shadow-elevation-high);
+}
+/* Only affects the paragraph */
+.heroText p {
+    font-size: 32px;
+}
+
+.heroIcons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.svgIcons {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.svgGitHub {
+    background-image: url(assets/images/svg_icons/github-original.svg);
+}
+.svgLinkedIn {
+    background-image: url(assets/images/svg_icons/linkedin-plain.svg);
+}
+.svgX{
+    background-image: url(assets/images/svg_icons/twitter-original.svg);
+}
